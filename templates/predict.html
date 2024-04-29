@@ -1,0 +1,199 @@
+{% extends "base.html" %} 
+{% block content %}
+<style>
+    .button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .15s ease;
+}
+
+.button::before,
+.button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7D8082;
+  transition: all .15s ease;
+}
+
+.button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button:active::before {
+  top: 3px;
+}
+
+.button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all .2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #ff4655;
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button:hover {
+  color: #0f1923;
+}
+
+.button:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+  background-color: #fff;
+}
+
+    .button {
+        /* Your button styles here */
+    }
+
+    .float-container {
+        display: flex;
+        flex-direction: column; /* Arrange items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .float-child {
+        margin-bottom: 20px; /* Optional: Add margin between each image and its content */
+    }
+
+    .image-container {
+        text-align: center; /* Center the image and its content */
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px; /* Optional: Add margin below each image */
+    }
+</style>
+
+<div class="float-container">
+    <div class="float-child">
+        <h2 class="a">Uploaded Image</h2>
+        <div class="image-container">
+            <img src="{{ url_for('upload_img', filename=file_name) }}" class="img-fluid">
+            <!-- Add download button/link -->
+            <a href="{{ url_for('upload_img', filename=file_name) }}" download="uploaded_image.jpg">
+                <!-- <button>Download Uploaded Image</button>-->
+            </a>
+        </div>
+    </div>
+
+    <div class="float-child">
+        <h2 class="a">
+            <script>
+                const queryString = window.location.search;
+                const urlParams = URLSearchParams(queryString);
+                const selectedOption = urlParams.get('style');
+                console.log("Selected option:",selectedOption);
+            </script>
+            <script>
+                const storedValue = localStorage.getItem('selectedOption');
+                console.log("Selected option:",storedValue);
+            </script>
+        </h2>
+        <h2 class="a">Result</h2>
+        <div class="image-container">
+            <img src="{{ url_for('cartoon_img', filename=cartoon_file) }}" class="img-fluid">
+            <!-- Add download button/link -->
+            <a href="{{ url_for('cartoon_img', filename=cartoon_file) }}" download="cartoon_image.jpg">
+                <div>
+
+
+                    <div class="float-child">
+                        <!-- Download button -->
+                        <button class="button">
+                            <span class="button_lg">
+                                <span class="button_sl"></span>
+                                <span class="button_text">Download Now</span>
+                            </span>
+                        </button>
+                    </div>
+                    <!-- Any additional content associated with the image -->
+                </div>
+            </a>
+        </div>
+        
+    </div>
+
+    
+</div>
+{% endblock %}
