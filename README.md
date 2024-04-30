@@ -52,6 +52,9 @@ pip install -r requirements.txt
 
 ## How it works
 
+![Screenshot (1)](https://github.com/narendra001100/cartoonyfyimg/assets/168404066/f1719fa1-e31a-46a5-a82f-5bf9da47c41e)
+
+
 - The application uses OpenCV for image processing and Flask for serving the web interface.
 - Various cartoonization styles are implemented using different OpenCV functions.
 - When an image is uploaded and a style is selected, the corresponding cartoonization function is called, and the resulting cartoonized image is displayed to the user.
