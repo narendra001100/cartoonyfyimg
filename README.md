@@ -53,6 +53,22 @@ pip install -r requirements.txt
 ## How it works
 
 ![Screenshot (1)](https://github.com/narendra001100/cartoonyfyimg/assets/168404066/f1719fa1-e31a-46a5-a82f-5bf9da47c41e)
+![Screenshot (2)](https://github.com/narendra001100/cartoonyfyimg/assets/168404066/212236ed-0aea-4650-9210-336f9b1819f2)
+
+![Screenshot (3)](https://github.com/narendra001100/cartoonyfyimg/assets/168404066/61bcb8a1-09e8-4169-b109-441504242843)
+
+![Screenshot (4)](https://github.com/narendra001100/cartoonyfyimg/assets/168404066/37e509f8-9c98-461e-ab93-046229066ff9)
+
+![Screenshot (5)](https://github.com/narendra001100/cartoonyfyimg/assets/168404066/19b7dc69-a3d7-4030-8504-7add6b8cea6f)
+
+![Screenshot (6)](https://github.com/narendra001100/cartoonyfyimg/assets/168404066/73cd522a-878a-449e-834a-c8f8402c5cbe)
+
+![Screenshot (7)](https://github.com/narendra001100/cartoonyfyimg/assets/168404066/f496d0cf-8d01-448f-9ad9-bf7cb5978f99)
+
+
+
+
+
 
 
 - The application uses OpenCV for image processing and Flask for serving the web interface.
